@@ -127,3 +127,4 @@ cd /var/lib/minishift/openshift.local.pv
 * easier configmap changes
 * volume from git repo: https://kubernetes.io/docs/concepts/storage/volumes/#gitrepo
 * https://github.com/tolleiv/docker-misc/blob/master/2017-prometheus-reload/refresh.sh
+* DEFINITELY: https://github.com/brancz/kubernetes-grafana
