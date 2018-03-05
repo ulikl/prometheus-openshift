@@ -112,16 +112,18 @@ cd /var/lib/minishift/openshift.local.pv
 * check rule evaluation and its graph on the prometheus dashboard
 
 # TODO
-* use StatefulSet ?
+* for oauth/statefulset/alertmanager use https://github.com/openshift/origin/blob/master/examples/prometheus/prometheus-standalone.yaml
+  as a reference to put multiple containers into one pod
+* or it is sufficient to specify an alertmanager url?
 * livenessProbe and/or readinessProbe
 * Add rules from https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus/assets/prometheus/rules
 * document template variables in readme
 * add remote_write for prometheus?
 * can storage limits/requests be calculated?
-* add alertmanager or add parameter to specify an alertmanager url?
 * parameters for grafana credentials?
 * redeploy on configmap change (maybe https://github.com/aabed/kubernetes-configmap-rollouts)
   or https://github.com/coreos/prometheus-operator/tree/master/contrib/prometheus-config-reloader
-  or https://github.com/jimmidyson/configmap-reload
+  or better https://github.com/jimmidyson/configmap-reload
 * easier configmap changes
-* oauth proxies for grafana/prometheus
+* volume from git repo: https://kubernetes.io/docs/concepts/storage/volumes/#gitrepo
+* https://github.com/tolleiv/docker-misc/blob/master/2017-prometheus-reload/refresh.sh
