@@ -18,7 +18,7 @@ parameters:
 # Prometheus
 - description: The location of the prometheus image.
   name: IMAGE_PROMETHEUS
-  value: prom/prometheus:v2.2.0
+  value: prom/prometheus:v2.1.0
 - description: Retention days for Prometheus. Defaults to '10d'
   name: RETENTION_DAYS_PROMETHEUS
   value: 10d
