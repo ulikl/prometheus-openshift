@@ -1,13 +1,5 @@
 Monitoring OpenShift with Prometheus, Node-Exporter, Kube-State-Metrics / visualization by Grafana
 
-# Version overview
-This project was build upon the following components:
-* OpenShift 3.7.1
-* Prometheus 2.1.0  
-* Grafana 5.0.0-beta4
-* Kube-state-metrics 1.1.0
-* Node-Exporter 0.15.2
-
 # Testing on minishift
 ```
 minishift start --memory 8GB --openshift-version v3.7.1

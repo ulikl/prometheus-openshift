@@ -18,7 +18,7 @@ parameters:
 # Prometheus
 - description: The location of the prometheus image.
   name: IMAGE_PROMETHEUS
-  value: prom/prometheus:v2.1.0
+  value: prom/prometheus:v2.2.1
 - description: Retention days for Prometheus. Defaults to '10d'
   name: RETENTION_DAYS_PROMETHEUS
   value: 10d
@@ -43,7 +43,7 @@ parameters:
 # Grafana
 - description: The location of the grafana image.
   name: IMAGE_GRAFANA
-  value: grafana/grafana:5.0.1
+  value: grafana/grafana:5.0.2
 - description: Size of the persistent volume for prometheus
   name: VOLUMESIZE_GRAFANA
   value: 100Mi
