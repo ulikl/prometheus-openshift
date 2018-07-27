@@ -34,7 +34,7 @@ items:
         hostNetwork: true
         hostPID: true
         containers:
-        - image: openshift/prometheus-node-exporter:v0.15.2
+        - image: prom/node-exporter:v0.16.0
           args:
           - "--path.procfs=/host/proc"
           - "--path.sysfs=/host/sys"
