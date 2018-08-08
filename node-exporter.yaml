@@ -35,7 +35,6 @@ items:
         hostNetwork: true
         hostPID: true
         containers:
-        - image: openshift/prometheus-node-exporter:v0.15.2
           # Note: labels are renamed with V0.16.0 -> other dashboards needed!
           args:
           - "--path.procfs=/host/proc"
