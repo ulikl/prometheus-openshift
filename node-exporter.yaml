@@ -18,6 +18,7 @@ items:
     labels:
       app: prometheus-node-exporter
       role: monitoring
+    namespace: prom-monitoring
   spec:
     updateStrategy:
       type: RollingUpdate
@@ -35,6 +36,7 @@ items:
         hostPID: true
         containers:
         - image: openshift/prometheus-node-exporter:v0.15.2
+          # Note: labels are renamed with V0.16.0 -> other dashboards needed!
           args:
           - "--path.procfs=/host/proc"
           - "--path.sysfs=/host/sys"
@@ -44,13 +46,15 @@ items:
           ports:
           - containerPort: 9100
             name: scrape
-          resources:
-            requests:
-              memory: 30Mi
-              cpu: 100m
-            limits:
-              memory: 50Mi
-              cpu: 200m
+        resources:
+          limits:
+            cpu: 50m
+            memory: 100Mi
+          requests:
+            # minimal setting for cluster are sufficient
+            cpu: 10m
+            memory: 30Mi
+            
           volumeMounts:
           - name: proc
             readOnly:  true
