@@ -18,7 +18,8 @@ items:
     labels:
       app: prometheus-node-exporter
       role: monitoring
-    namespace: prom-monitoring
+    namespace: infra-prometheus
+    #prom-monitoring
   spec:
     updateStrategy:
       type: RollingUpdate
@@ -35,10 +36,11 @@ items:
         hostNetwork: true
         hostPID: true
         containers:
-          # Note: labels are renamed with V0.16.0 -> other dashboards needed!
+        # Note: labels are renamed with V0.16.0 -> other dashboards needed!
+        - image: prom/node-exporter:v0.16.0
           args:
-          - "--path.procfs=/host/proc"
-          - "--path.sysfs=/host/sys"
+          - "--path.procfs=/proc"
+          - "--path.sysfs=/sys"
           - "--collector.filesystem.ignored-mount-points"
           - "^/(rootfs/)?(sys|proc|dev|host|etc|var|run).*"
           name: prometheus-node-exporter
